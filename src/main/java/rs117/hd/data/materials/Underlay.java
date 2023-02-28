@@ -146,6 +146,8 @@ public enum Underlay {
     UNDERLAY_58(GroundMaterial.SNOW_1, p -> p.ids(58)),
     UNDERLAY_72(GroundMaterial.VARIED_DIRT, p -> p.ids(72, 98)),
 
+    LAND_OF_SNOW_SNOW(GroundMaterial.SNOW_1, p -> p.ids(1083)),
+
     NONE(GroundMaterial.DIRT, p -> {});
 
     @Nullable
