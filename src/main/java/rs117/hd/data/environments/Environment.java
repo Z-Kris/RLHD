@@ -831,6 +831,7 @@ public enum Environment
 		.setDirectionalStrength(2.0f)
 		.setDirectionalColor("#00FF60")
 		.setLightDirection(260f, 10f)
+		.setAllowSkyOverride(false)
 	),
 
 	// Underwater areas
@@ -978,7 +979,6 @@ public enum Environment
 			.setDirectionalStrength(1.0f)
 			.setLightDirection(260f, 10f)
 	),
-
 	// overrides 'ALL' to provide default daylight conditions for the overworld area
 	OVERWORLD(Area.OVERWORLD, new Properties()),
 	// used for underground, instances, etc.
@@ -992,7 +992,6 @@ public enum Environment
 		.setLightDirection(260f, 10f)
 		.setWaterColor(102, 234, 255)
 	),
-
 	;
 
 	private final Area area;

@@ -6,9 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
 import net.runelite.api.coords.WorldPoint;
-import net.runelite.client.callback.ClientThread;
 import rs117.hd.HdPlugin;
-import rs117.hd.model.ModelPusher;
 import rs117.hd.scene.model_overrides.ModelOverride;
 import rs117.hd.utils.AABB;
 import rs117.hd.utils.Env;
@@ -32,13 +30,7 @@ public class ModelOverrideManager {
     private Client client;
 
     @Inject
-    private ClientThread clientThread;
-
-    @Inject
     private HdPlugin plugin;
-
-    @Inject
-    private ModelPusher modelPusher;
 
     private final HashMap<Long, ModelOverride> modelOverrides = new HashMap<>();
     private final HashMap<Long, AABB[]> modelsToHide = new HashMap<>();
@@ -58,12 +50,8 @@ public class ModelOverrideManager {
                     for (int objectId : entry.objectIds)
                         addEntry(ModelHash.packUuid(objectId, ModelHash.TYPE_OBJECT), entry);
                 }
-                if (client.getGameState() == GameState.LOGGED_IN) {
-                    clientThread.invokeLater(() -> {
-                        plugin.uploadScene();
-                        modelPusher.clearModelCache();
-                    });
-                }
+                if (client.getGameState() == GameState.LOGGED_IN)
+                    plugin.reloadSceneNextGameTick();
                 log.debug("Loaded {} model overrides", modelOverrides.size());
             } catch (IOException ex) {
                 log.error("Failed to load model overrides:", ex);
@@ -72,6 +60,10 @@ public class ModelOverrideManager {
     }
 
     private void addEntry(long uuid, ModelOverride entry) {
+        ModelOverride old = modelOverrides.put(uuid, entry);
+        if (old != null)
+            log.debug("ID {} clashes between entries '{}' and '{}'", ModelHash.getIdOrIndex(uuid), entry.description, old.description);
+
         // Ensure there are no nulls in case of invalid configuration during development
         if (entry.baseMaterial == null)
             entry.baseMaterial = ModelOverride.NONE.baseMaterial;
@@ -83,21 +75,8 @@ public class ModelOverrideManager {
             entry.tzHaarRecolorType = ModelOverride.NONE.tzHaarRecolorType;
         if (entry.inheritTileColorType == null)
             entry.inheritTileColorType = ModelOverride.NONE.inheritTileColorType;
-        if (entry.hideInAreas == null)
-            entry.hideInAreas = new AABB[0];
 
-        ModelOverride old = modelOverrides.put(uuid, entry);
         modelsToHide.put(uuid, entry.hideInAreas);
-
-        if (Env.DEVELOPMENT && old != null) {
-            if (entry.hideInAreas.length > 0) {
-                log.warn("Replacing ID {} from '{}' with hideInAreas-override '{}'. This is likely a mistake...",
-                    ModelHash.getIdOrIndex(uuid), old.description, entry.description);
-            } else if (old.hideInAreas.length == 0) {
-                log.warn("Replacing ID {} from '{}' with '{}'. The first-mentioned override should be removed.",
-                    ModelHash.getIdOrIndex(uuid), old.description, entry.description);
-            }
-        }
     }
 
     public boolean shouldHideModel(long hash, int x, int z) {
@@ -105,7 +84,7 @@ public class ModelOverrideManager {
 
         AABB[] aabbs = modelsToHide.get(uuid);
         if (aabbs != null && hasNoActions(uuid)) {
-            WorldPoint location = ModelHash.getWorldTemplateLocation(client, x, z);
+            WorldPoint location = ModelHash.getWorldLocation(client, x, z);
             for (AABB aabb : aabbs)
                 if (aabb.contains(location))
                     return true;

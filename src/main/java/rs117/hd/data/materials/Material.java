@@ -225,10 +225,7 @@ public enum Material
 
 	DIRT_1,
 	DIRT_2,
-	GRAVEL_N,
-	GRAVEL(p -> p
-		.setNormalMap(GRAVEL_N)
-		.setSpecular(0.4f,130)),
+	GRAVEL,
 
 	DIRT_SHINY_1(DIRT_1, p -> p
 		.setSpecular(1.1f, 380)),
@@ -245,19 +242,12 @@ public enum Material
 	GRUNGE_2,
 
 	ROCK_1,
-	ROCK_1_LIGHT(ROCK_1, p -> p.setBrightness(1.4f)),
 	ROCK_2,
 
 	CARPET,
-	FINE_CARPET(CARPET, p -> p
-		.setBrightness(1.4f)
-		.setTextureScale(0.5f,0.5f)),
 
-	FALADOR_PATH_BRICK_N,
 	FALADOR_PATH_BRICK(p -> p
-		.setNormalMap(FALADOR_PATH_BRICK_N)
-		.setSpecular(0.3f, 30)
-	),
+		.setSpecular(0.3f, 30)),
 	JAGGED_STONE_TILE,
 
 	TILE_SMALL_1(p -> p
@@ -307,14 +297,7 @@ public enum Material
 		.setFlowMap(LAVA_FLOW_MAP, 0.04f, 36, 12)),
 
 	BARK,
-	LIGHT_BARK(BARK, p -> p.setBrightness(1.75f)),
 	WOOD_GRAIN,
-	WOOD_GRAIN_2_N,
-	WOOD_GRAIN_2(p -> p
-		.setNormalMap(WOOD_GRAIN_2_N)),
-	WOOD_GRAIN_3,
-	DOCK_FENCE,
-	DOCK_FENCE_DARK(DOCK_FENCE, p -> p.setBrightness(0.6f)),
 
 	HD_INFERNAL_CAPE(p -> p
 		.replaceIf(INFERNAL_CAPE, HdPluginConfig::hdInfernalTexture)
@@ -341,36 +324,10 @@ public enum Material
 		.setScroll(0, 1 / 3f)),
 	HD_ROOF_SHINGLES_2(p -> p
 		.replaceIf(ROOF_SHINGLES_2, HdPluginConfig::objectTextures)),
-
 	WORN_TILES,
-	STONE,
-	STONE_SEMIGLOSS(STONE, p -> p.setSpecular(0.6f, 100)),
 
 	WALL_STONE_N,
 	WALL_STONE(p -> p.setNormalMap(WALL_STONE_N)),
-	METALLIC_1,
-	METALLIC_1_SEMIGLOSS(METALLIC_1, p -> p
-		.setSpecular(0.3f, 80)),
-	METALLIC_1_GLOSS(METALLIC_1, p -> p
-		.setSpecular(0.7f, 80)),
-	METALLIC_1_HIGHGLOSS(METALLIC_1, p -> p
-		.setSpecular(1.1f, 80)),
-	METALLIC_2(METALLIC_1, p -> p.setBrightness(1.8f)),
-	METALLIC_2_SEMIGLOSS(METALLIC_2, p -> p
-		.setSpecular(0.3f, 80)),
-	METALLIC_2_GLOSS(METALLIC_2, p -> p
-		.setSpecular(0.7f, 80)),
-	METALLIC_2_HIGHGLOSS(METALLIC_2, p -> p
-		.setSpecular(1.1f, 80)),
-	METALLIC_NONE_GLOSS(NONE, p -> p
-		.setSpecular(0.7f, 80)),
-	WATTLE_1,
-	ICE_1(GRUNGE_2, p -> p
-		.setSpecular(1.1f,200)),
-	SLIME_GRUNGE(GRUNGE_1, p -> p
-		.setSpecular(4.1f,60)),
-	WATER_PUDDLE(NONE, p -> p
-		.setSpecular(1.5f, 80)),
 
 	// Seasonal
 	WINTER_WILLOW_LEAVES(p -> p
@@ -403,12 +360,12 @@ public enum Material
 	public final int vanillaTextureIndex;
 	public final boolean overrideBaseColor;
 	public final boolean unlit;
-	public final float brightness;
 	public final float displacementScale;
 	public final float flowMapStrength;
 	public final float[] flowMapDuration;
 	public final float specularStrength;
 	public final float specularGloss;
+	public final float emissiveStrength;
 	public final float[] scrollSpeed;
 	public final float[] textureScale;
 	public final Material materialToReplace;
@@ -426,12 +383,12 @@ public enum Material
 		private int vanillaTextureIndex = -1;
 		private boolean overrideBaseColor = false;
 		private boolean unlit = false;
-		private float brightness = 1;
 		private float displacementScale = .1f;
 		private float flowMapStrength;
 		private float[] flowMapDuration = { 0, 0 };
 		private float specularStrength;
 		private float specularGloss;
+		private float emissiveStrength;
 		private float[] scrollSpeed = { 0, 0 };
 		private float[] textureScale = { 1, 1 };
 		private Material materialToReplace;
@@ -454,12 +411,12 @@ public enum Material
 			this.vanillaTextureIndex = parent.vanillaTextureIndex;
 			this.overrideBaseColor = parent.overrideBaseColor;
 			this.unlit = parent.unlit;
-			this.brightness = parent.brightness;
 			this.displacementScale = parent.displacementScale;
 			this.flowMapStrength = parent.flowMapStrength;
 			this.flowMapDuration = parent.flowMapDuration;
 			this.specularStrength = parent.specularStrength;
 			this.specularGloss = parent.specularGloss;
+			this.emissiveStrength = parent.emissiveStrength;
 			this.scrollSpeed = parent.scrollSpeed;
 			this.textureScale = parent.textureScale;
 			this.materialToReplace = parent.materialToReplace;
@@ -535,12 +492,12 @@ public enum Material
 		this.vanillaTextureIndex = builder.vanillaTextureIndex;
 		this.overrideBaseColor = builder.overrideBaseColor;
 		this.unlit = builder.unlit;
-		this.brightness = builder.brightness;
 		this.displacementScale = builder.displacementScale;
 		this.flowMapStrength = builder.flowMapStrength;
 		this.flowMapDuration = builder.flowMapDuration;
 		this.specularStrength = builder.specularStrength;
 		this.specularGloss = builder.specularGloss;
+		this.emissiveStrength = builder.emissiveStrength;
 		this.scrollSpeed = builder.scrollSpeed;
 		this.textureScale = builder.textureScale;
 		this.materialToReplace = builder.materialToReplace;

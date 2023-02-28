@@ -43,13 +43,12 @@ uniform int useFog;
 uniform int fogDepth;
 uniform int drawDistance;
 
-out VertexData {
-    ivec3 pos;
-    vec4 normal;
-    vec4 color;
-    vec4 uv;
-    float fogAmount;
-} OUT;
+out ivec3 vPosition;
+out vec4 vNormal;
+out vec4 vColor;
+out float vHsl;
+out vec4 vUv;
+out float vFogAmount;
 
 #include utils/color_conversion.glsl
 
@@ -60,16 +59,18 @@ float fogFactorLinear(const float dist, const float start, const float end) {
 void main() {
     ivec3 vertex = VertexPosition.xyz;
     int ahsl = VertexPosition.w;
-    vec3 rgb = jagexHslToRgb(ahsl & 0xffff);
-    float alpha = 1 - float(ahsl >> 24 & 0xff) / 255.f;
+    int hsl = ahsl & 0xffff;
+    float a = float(ahsl >> 24 & 0xff) / 255.f;
 
-    OUT.pos = vertex;
-    OUT.normal = normal;
-    OUT.color = vec4(srgbToLinear(rgb), alpha);
-    OUT.uv = uv;
-    OUT.fogAmount = 0;
+    vec3 rgb = jagexHslToRgb(hsl);
 
-    if (fogDepth > 0) {
+    vPosition = vertex;
+    vNormal = normal;
+    vColor = vec4(srgbToLinear(rgb), 1.f - a);
+    vUv = uv;
+
+    if (fogDepth > 0)
+    {
         int fogWest = max(FOG_SCENE_EDGE_MIN, cameraX - drawDistance);
         int fogEast = min(FOG_SCENE_EDGE_MAX, cameraX + drawDistance - TILE_SIZE);
         int fogSouth = max(FOG_SCENE_EDGE_MIN, cameraZ - drawDistance);
@@ -113,6 +114,11 @@ void main() {
         float distanceFogAmount = max(distanceFogAmount1, distanceFogAmount2);
 
         // Combine distance fog with edge fog
-        OUT.fogAmount = max(distanceFogAmount, edgeFogAmount);
+        vFogAmount = max(distanceFogAmount, edgeFogAmount);
+    }
+    else
+    {
+        // Set out parameter as it is initialized to garbage data otherwise
+        vFogAmount = 0.0f;
     }
 }

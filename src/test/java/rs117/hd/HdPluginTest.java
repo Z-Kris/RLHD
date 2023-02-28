@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.RuneLite;
 import net.runelite.client.RuneLiteProperties;
 import net.runelite.client.externalplugins.ExternalPluginManager;
-import rs117.hd.utils.Env;
 import rs117.hd.utils.ResourcePath;
 
 import java.io.InputStream;
@@ -18,7 +17,6 @@ public class HdPluginTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		Env.DEVELOPMENT = true;
 		ResourcePath.RESOURCE_PATH = path("src/main/resources");
 		useLatestPluginHub();
 		ExternalPluginManager.loadBuiltin(HdPlugin.class);
