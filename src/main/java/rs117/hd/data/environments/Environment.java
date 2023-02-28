@@ -1012,6 +1012,16 @@ public enum Environment
 			.setDirectionalStrength(2.5f)
 	),
 
+	COCKROACH_DUNGEON(Area.COCKROACH_DUNGEON, new Properties()
+			.setFogColor(27, 21, 13)
+			.setFogDepth(10)
+			.setAmbientColor(171, 160, 144)
+			.setAmbientStrength(1.0f)
+			.setDirectionalColor(171, 160, 144)
+			.setDirectionalStrength(1.8f)
+			.setLightDirection(260f, 10f)
+	),
+
 	// overrides 'ALL' to provide default daylight conditions for the overworld area
 	OVERWORLD(Area.OVERWORLD, new Properties()),
 	// used for underground, instances, etc.

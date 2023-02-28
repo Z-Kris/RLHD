@@ -274,7 +274,36 @@
       64289
     ]
   },
-
+  {
+    "description": "COCKROACH_DUNGEON_MOSS",
+    "height": 100,
+    "alignment": "CENTER",
+    "radius": 300,
+    "strength": 10,
+    "color": [
+      133,
+      219,
+      47
+    ],
+    "type": "PULSE",
+    "duration": 500,
+    "range": 3,
+    "objectIds": [
+      64560,
+      64559,
+      64556,
+      64520,
+      64519,
+      64556,
+      64543,
+      64545,
+      64548,
+      64550,
+      64544,
+      64542,
+      64620
+    ]
+  },
 
   {
     "description": "lava",
