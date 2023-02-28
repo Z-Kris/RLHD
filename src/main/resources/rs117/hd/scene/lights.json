@@ -162,7 +162,7 @@
     ]
   },
   {
-    "description": "STANDING_TORCH",
+    "description": "FIST_OF_GUTHIX_TORCHES",
     "height": 250,
     "alignment": "CENTER",
     "radius": 500,
@@ -180,6 +180,101 @@
       64157
     ]
   },
+  {
+    "description": "SCOURGES_HOUSE_LANTERNS",
+    "worldX": 1184,
+    "worldY": 6664,
+    "plane": 0,
+    "height": 250,
+    "alignment": "FRONT",
+    "radius": 800,
+    "strength": 15,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 3
+  },
+  {
+    "description": "SCOURGES_HOUSE_LANTERNS",
+    "worldX": 1185,
+    "worldY": 6664,
+    "plane": 0,
+    "height": 250,
+    "alignment": "FRONT",
+    "radius": 400,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20
+  },
+  {
+    "description": "SCOURGES_HOUSE_CANDLES",
+    "height": 175,
+    "alignment": "CENTER",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      64280,
+      64274,
+      64279
+    ]
+  },
+  {
+    "description": "SCOURGES_HOUSE_CANDLES",
+    "height": 250,
+    "alignment": "FRONT",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      64277,
+      64278
+    ]
+  },
+  {
+    "description": "SCOURGES_HOUSE_CANDLES",
+    "height": 200,
+    "alignment": "CENTER",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      64288,
+      64289
+    ]
+  },
+
 
   {
     "description": "lava",

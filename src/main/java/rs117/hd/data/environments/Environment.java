@@ -1000,6 +1000,18 @@ public enum Environment
 			.setLightDirection(260f, 10f)
 	),
 
+	LAND_OF_SNOW(Area.LAND_OF_SNOW, new Properties()
+			.setFogColor(201, 209, 209)
+			.setFogDepth(10)
+	),
+
+	SCOURGES_HOUSE(Area.SCOURGES_HOUSE, new Properties()
+			.setFogColor(21, 28, 36)
+			.setFogDepth(10)
+			.setDirectionalColor(158, 163, 168)
+			.setDirectionalStrength(2.5f)
+	),
+
 	// overrides 'ALL' to provide default daylight conditions for the overworld area
 	OVERWORLD(Area.OVERWORLD, new Properties()),
 	// used for underground, instances, etc.
