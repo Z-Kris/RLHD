@@ -990,6 +990,16 @@ public enum Environment
 			.setLightDirection(260f, 10f)
 	),
 
+	FIST_OF_GUTHIX(Area.FIST_OF_GUTHIX, new Properties()
+			.setFogColor(0, 0, 0)
+			.setFogDepth(10)
+			.setAmbientColor(219, 219, 219)
+			.setAmbientStrength(1.0f)
+			.setDirectionalColor(160, 168, 166) // overall hue of the ground etc
+			.setDirectionalStrength(1.8f)
+			.setLightDirection(260f, 10f)
+	),
+
 	// overrides 'ALL' to provide default daylight conditions for the overworld area
 	OVERWORLD(Area.OVERWORLD, new Properties()),
 	// used for underground, instances, etc.

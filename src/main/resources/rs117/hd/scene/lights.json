@@ -143,6 +143,43 @@
     "duration": 7000,
     "range": 10
   },
+  {
+    "description": "FIST_OF_GUTHIX_PORTAL",
+    "height": 180,
+    "alignment": "CENTER",
+    "radius": 700,
+    "strength": 15,
+    "color": [
+      93,
+      0,
+      255
+    ],
+    "type": "PULSE",
+    "duration": 400,
+    "range": 20,
+    "objectIds": [
+      64149
+    ]
+  },
+  {
+    "description": "STANDING_TORCH",
+    "height": 250,
+    "alignment": "CENTER",
+    "radius": 500,
+    "strength": 12.5,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      64135,
+      64157
+    ]
+  },
 
   {
     "description": "lava",
