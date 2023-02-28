@@ -304,6 +304,24 @@
       64620
     ]
   },
+  {
+    "description": "COCKROACH_DUNGEON_PRISON_CANDLES",
+    "height": 300,
+    "alignment": "CENTER",
+    "radius": 200,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      64510
+    ]
+  },
 
   {
     "description": "lava",

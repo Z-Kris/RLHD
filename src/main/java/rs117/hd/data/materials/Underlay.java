@@ -147,7 +147,7 @@ public enum Underlay {
     UNDERLAY_72(GroundMaterial.VARIED_DIRT, p -> p.ids(72, 98)),
 
     LAND_OF_SNOW_SNOW(GroundMaterial.SNOW_1, p -> p.ids(1083)),
-    COCKROACH_DUNGEON_SAND(GroundMaterial.SNOW_1, p -> p.ids(1150, 1153)),
+    COCKROACH_DUNGEON_SAND(GroundMaterial.SNOW_1, p -> p.ids(1150, 1153, 1122)),
 
     NONE(GroundMaterial.DIRT, p -> {});
 
