@@ -1,5 +1,150 @@
 [
   {
+    "description": "FIST_OF_GUTHIX_ENERGY_BARRIER",
+    "height": 100,
+    "alignment": "CENTER",
+    "radius": 500,
+    "strength": 7,
+    "color": [
+      68,
+      235,
+      146
+    ],
+    "type": "FLICKER",
+    "duration": 200,
+    "range": 3,
+    "objectIds": [
+      64246
+    ]
+  },
+  {
+    "description": "FIST_OF_GUTHIX_INNER_PORTAL",
+    "height": 120,
+    "alignment": "CENTER",
+    "radius": 400,
+    "strength": 15,
+    "color": [
+      17,
+      237,
+      120
+    ],
+    "type": "PULSE",
+    "duration": 1500,
+    "range": 25,
+    "objectIds": [
+      64242
+    ]
+  },
+  {
+    "description": "FIST_OF_GUTHIX_STONE_DISPENSER",
+    "height": 200,
+    "alignment": "CENTER",
+    "radius": 300,
+    "strength": 25,
+    "color": [
+      255,
+      255,
+      255
+    ],
+    "type": "PULSE",
+    "duration": 1000,
+    "range": 25,
+    "objectIds": [
+      64245
+    ]
+  },
+  {
+    "description": "FIST_OF_GUTHIX_STONE_WALL_CRACKS",
+    "height": 100,
+    "alignment": "CENTER",
+    "radius": 150,
+    "strength": 15,
+    "color": [
+      255,
+      255,
+      255
+    ],
+    "type": "PULSE",
+    "duration": 1000,
+    "range": 25,
+    "objectIds": [
+      64195
+    ]
+  },
+  {
+    "description": "FIST_OF_GUTHIX_CENTER",
+    "worldX": 1855,
+    "worldY": 6847,
+    "plane": 0,
+    "height": 20,
+    "alignment": "CENTER",
+    "radius": 800,
+    "strength": 15,
+    "color": [
+      201,
+      255,
+      236
+    ],
+    "type": "PULSE",
+    "duration": 7000,
+    "range": 10
+  },
+  {
+    "description": "FIST_OF_GUTHIX_CENTER",
+    "worldX": 1856,
+    "worldY": 6847,
+    "plane": 0,
+    "height": 20,
+    "alignment": "CENTER",
+    "radius": 800,
+    "strength": 15,
+    "color": [
+      201,
+      255,
+      236
+    ],
+    "type": "PULSE",
+    "duration": 7000,
+    "range": 10
+  },
+  {
+    "description": "FIST_OF_GUTHIX_CENTER",
+    "worldX": 1855,
+    "worldY": 6848,
+    "plane": 0,
+    "height": 20,
+    "alignment": "CENTER",
+    "radius": 800,
+    "strength": 15,
+    "color": [
+      201,
+      255,
+      236
+    ],
+    "type": "PULSE",
+    "duration": 7000,
+    "range": 10
+  },
+  {
+    "description": "FIST_OF_GUTHIX_CENTER",
+    "worldX": 1856,
+    "worldY": 6848,
+    "plane": 0,
+    "height": 20,
+    "alignment": "CENTER",
+    "radius": 800,
+    "strength": 15,
+    "color": [
+      201,
+      255,
+      236
+    ],
+    "type": "PULSE",
+    "duration": 7000,
+    "range": 10
+  },
+
+  {
     "description": "lava",
     "worldX": 2467,
     "worldY": 5174,
