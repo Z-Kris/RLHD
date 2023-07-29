@@ -26,22 +26,18 @@
 package rs117.hd.utils;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
-import org.lwjgl.BufferUtils;
-import org.lwjgl.system.MemoryUtil;
-import org.lwjgl.system.Platform;
-
-import javax.annotation.Nullable;
-import javax.annotation.RegEx;
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
-import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -55,10 +51,19 @@ import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.annotation.RegEx;
+import javax.imageio.ImageIO;
+import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
+import org.lwjgl.BufferUtils;
+import org.lwjgl.system.MemoryUtil;
+import org.lwjgl.system.Platform;
 
 @Slf4j
 public class ResourcePath {
-    public static ResourcePath RESOURCE_PATH = Env.getPathOrDefault("RLHD_RESOURCE_PATH", (ResourcePath) null);
+    public static ResourcePath RESOURCE_PATH = Props.getPathOrDefault("rlhd.resource-path", () -> null);
 
     private static final FileWatcher.UnregisterCallback NOOP = () -> {};
 
@@ -87,12 +92,12 @@ public class ResourcePath {
         this(null, parts);
     }
 
-    private ResourcePath(ResourcePath root) {
+    private ResourcePath(@Nonnull ResourcePath root) {
         this.root = root;
         this.path = null;
     }
 
-    private ResourcePath(ResourcePath root, String... parts) {
+    private ResourcePath(@Nullable ResourcePath root, String... parts) {
         this.root = root;
         this.path = normalize(parts);
     }
@@ -109,9 +114,15 @@ public class ResourcePath {
     
     @SuppressWarnings("ResultOfMethodCallIgnored")
     public ResourcePath mkdirs() {
-        toPath().toFile().getParentFile().mkdirs();
+        toFile().getParentFile().mkdirs();
         return this;
     }
+
+	public boolean exists() {
+		if (root == null)
+			return toFile().exists();
+		return root.resolve(path).exists();
+	}
 
     public String getFilename() {
         if (path == null)
@@ -194,6 +205,8 @@ public class ResourcePath {
     }
 
     public File toFile() {
+		if (!isFileSystemResource())
+			throw new IllegalStateException("Not a file: " + this);
         return toPath().toFile();
     }
 
@@ -325,9 +338,16 @@ public class ResourcePath {
     }
 
     public ResourcePath writeByteBuffer(ByteBuffer buffer) throws IOException {
-        try (FileChannel channel = toOutputStream().getChannel()) {
-            channel.write(buffer);
-        }
+		try (var os = toOutputStream(); var channel = os.getChannel()) {
+			int bytesToWrite = buffer.remaining();
+			int bytesWritten = channel.write(buffer);
+			if (bytesWritten < bytesToWrite) {
+				throw new IOException(String.format(
+					"Only %d out of %d bytes were successfully written to %s",
+					bytesWritten, bytesToWrite, this
+				));
+			}
+		}
         return this;
     }
 
@@ -469,7 +489,14 @@ public class ResourcePath {
             return new ClassResourcePath(root, normalize(path, parts));
         }
 
-        @Override
+		@Override
+		public boolean exists()
+		{
+			assert path != null;
+			return root.getResource(path) != null;
+		}
+
+		@Override
         public String toString() {
             return super.toString() + " from class " + root.getName();
         }
@@ -508,21 +535,21 @@ public class ResourcePath {
         public InputStream toInputStream() throws IOException {
             assert path != null;
 
-            // Attempt to load resource from project resource folder if it's not located in a jar
-            if (RESOURCE_PATH != null && isFileSystemResource()) {
-                ResourcePath path = null;
-                try {
-                    path = RESOURCE_PATH.chroot().resolve(toAbsolute().toPath().toString());
-                    return path.toInputStream();
-                } catch (Exception ex) {
-                    log.trace("Failed to load resource from project resource folder: {}", path, ex);
-                }
-            }
-
-            InputStream is = root.getResourceAsStream(path);
-            if (is == null)
-                throw new IOException("Missing resource: " + this);
-            return is;
+            // Attempt to load resource from project resource folder if it's on the file system
+			if (RESOURCE_PATH != null && isFileSystemResource()) {
+				ResourcePath path = null;
+				try {
+					path = RESOURCE_PATH.chroot().resolve(toAbsolute().toPath().toString());
+					return path.toInputStream();
+				} catch (IOException ex) {
+					throw new IOException("Failed to load resource from project resource path: " + path, ex);
+				}
+			} else {
+				InputStream is = root.getResourceAsStream(path);
+				if (is == null)
+					throw new IOException("Missing resource: " + this);
+				return is;
+			}
         }
     }
 
@@ -538,6 +565,13 @@ public class ResourcePath {
         public ResourcePath resolve(String... parts) {
             return new ClassLoaderResourcePath(root, normalize(path, parts));
         }
+
+		@Override
+		public boolean exists()
+		{
+			assert path != null;
+			return root.getResource(path) != null;
+		}
 
         @Override
         public String toString() {

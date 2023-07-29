@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022, Hooder <ahooder@protonmail.com>
+ * Copyright (c) 2023, Hooder <ahooder@protonmail.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -24,12 +24,9 @@
  */
 package rs117.hd.config;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
-@Getter
-@RequiredArgsConstructor
-public enum ParallaxMappingMode
+public enum ShadowMode
 {
-	OFF, BASIC, FULL, EXTREME;
+	OFF,
+	FAST,
+	DETAILED
 }
