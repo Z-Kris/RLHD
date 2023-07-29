@@ -1,5 +1,328 @@
 [
   {
+    "description": "FIST_OF_GUTHIX_ENERGY_BARRIER",
+    "height": 100,
+    "alignment": "CENTER",
+    "radius": 500,
+    "strength": 7,
+    "color": [
+      68,
+      235,
+      146
+    ],
+    "type": "FLICKER",
+    "duration": 200,
+    "range": 3,
+    "objectIds": [
+      64246
+    ]
+  },
+  {
+    "description": "FIST_OF_GUTHIX_INNER_PORTAL",
+    "height": 120,
+    "alignment": "CENTER",
+    "radius": 400,
+    "strength": 15,
+    "color": [
+      17,
+      237,
+      120
+    ],
+    "type": "PULSE",
+    "duration": 1500,
+    "range": 25,
+    "objectIds": [
+      64242
+    ]
+  },
+  {
+    "description": "FIST_OF_GUTHIX_STONE_DISPENSER",
+    "height": 200,
+    "alignment": "CENTER",
+    "radius": 300,
+    "strength": 25,
+    "color": [
+      255,
+      255,
+      255
+    ],
+    "type": "PULSE",
+    "duration": 1000,
+    "range": 25,
+    "objectIds": [
+      64245
+    ]
+  },
+  {
+    "description": "FIST_OF_GUTHIX_STONE_WALL_CRACKS",
+    "height": 100,
+    "alignment": "CENTER",
+    "radius": 150,
+    "strength": 15,
+    "color": [
+      255,
+      255,
+      255
+    ],
+    "type": "PULSE",
+    "duration": 1000,
+    "range": 25,
+    "objectIds": [
+      64195
+    ]
+  },
+  {
+    "description": "FIST_OF_GUTHIX_CENTER",
+    "worldX": 1855,
+    "worldY": 6847,
+    "plane": 0,
+    "height": 20,
+    "alignment": "CENTER",
+    "radius": 800,
+    "strength": 15,
+    "color": [
+      201,
+      255,
+      236
+    ],
+    "type": "PULSE",
+    "duration": 7000,
+    "range": 10
+  },
+  {
+    "description": "FIST_OF_GUTHIX_CENTER",
+    "worldX": 1856,
+    "worldY": 6847,
+    "plane": 0,
+    "height": 20,
+    "alignment": "CENTER",
+    "radius": 800,
+    "strength": 15,
+    "color": [
+      201,
+      255,
+      236
+    ],
+    "type": "PULSE",
+    "duration": 7000,
+    "range": 10
+  },
+  {
+    "description": "FIST_OF_GUTHIX_CENTER",
+    "worldX": 1855,
+    "worldY": 6848,
+    "plane": 0,
+    "height": 20,
+    "alignment": "CENTER",
+    "radius": 800,
+    "strength": 15,
+    "color": [
+      201,
+      255,
+      236
+    ],
+    "type": "PULSE",
+    "duration": 7000,
+    "range": 10
+  },
+  {
+    "description": "FIST_OF_GUTHIX_CENTER",
+    "worldX": 1856,
+    "worldY": 6848,
+    "plane": 0,
+    "height": 20,
+    "alignment": "CENTER",
+    "radius": 800,
+    "strength": 15,
+    "color": [
+      201,
+      255,
+      236
+    ],
+    "type": "PULSE",
+    "duration": 7000,
+    "range": 10
+  },
+  {
+    "description": "FIST_OF_GUTHIX_PORTAL",
+    "height": 180,
+    "alignment": "CENTER",
+    "radius": 700,
+    "strength": 15,
+    "color": [
+      93,
+      0,
+      255
+    ],
+    "type": "PULSE",
+    "duration": 400,
+    "range": 20,
+    "objectIds": [
+      64149
+    ]
+  },
+  {
+    "description": "FIST_OF_GUTHIX_TORCHES",
+    "height": 250,
+    "alignment": "CENTER",
+    "radius": 500,
+    "strength": 12.5,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      64135,
+      64157
+    ]
+  },
+  {
+    "description": "SCOURGES_HOUSE_LANTERNS",
+    "worldX": 1184,
+    "worldY": 6664,
+    "plane": 0,
+    "height": 250,
+    "alignment": "FRONT",
+    "radius": 800,
+    "strength": 15,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 3
+  },
+  {
+    "description": "SCOURGES_HOUSE_LANTERNS",
+    "worldX": 1185,
+    "worldY": 6664,
+    "plane": 0,
+    "height": 250,
+    "alignment": "FRONT",
+    "radius": 400,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20
+  },
+  {
+    "description": "SCOURGES_HOUSE_CANDLES",
+    "height": 175,
+    "alignment": "CENTER",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      64280,
+      64274,
+      64279
+    ]
+  },
+  {
+    "description": "SCOURGES_HOUSE_CANDLES",
+    "height": 250,
+    "alignment": "FRONT",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      64277,
+      64278
+    ]
+  },
+  {
+    "description": "SCOURGES_HOUSE_CANDLES",
+    "height": 200,
+    "alignment": "CENTER",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      64288,
+      64289
+    ]
+  },
+  {
+    "description": "COCKROACH_DUNGEON_MOSS",
+    "height": 100,
+    "alignment": "CENTER",
+    "radius": 300,
+    "strength": 10,
+    "color": [
+      133,
+      219,
+      47
+    ],
+    "type": "PULSE",
+    "duration": 500,
+    "range": 3,
+    "objectIds": [
+      64560,
+      64559,
+      64556,
+      64520,
+      64519,
+      64556,
+      64543,
+      64545,
+      64548,
+      64550,
+      64544,
+      64542,
+      64620
+    ]
+  },
+  {
+    "description": "COCKROACH_DUNGEON_PRISON_CANDLES",
+    "height": 300,
+    "alignment": "CENTER",
+    "radius": 200,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      64510
+    ]
+  },
+  {
     "description": "lava",
     "worldX": 2467,
     "worldY": 5174,

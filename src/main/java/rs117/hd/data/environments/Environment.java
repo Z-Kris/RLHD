@@ -1058,6 +1058,57 @@ public enum Environment
 			.setDirectionalStrength(1.0f)
 			.setLightDirection(260f, 10f)
 	),
+
+	FIST_OF_GUTHIX_GAME(Area.FIST_OF_GUTHIX_GAME, new Properties()
+		.setFogColor(0, 0, 0)
+		.setFogDepth(10)
+		.setAmbientColor(219, 219, 219)
+		.setAmbientStrength(1.0f)
+		.setDirectionalColor(160, 168, 166) // overall hue of the ground etc
+		.setDirectionalStrength(1.8f)
+		.setLightDirection(260f, 10f)
+	),
+
+	FIST_OF_GUTHIX(Area.FIST_OF_GUTHIX, new Properties()
+		.setFogColor(0, 0, 0)
+		.setFogDepth(10)
+		.setAmbientColor(219, 219, 219)
+		.setAmbientStrength(1.0f)
+		.setDirectionalColor(160, 168, 166) // overall hue of the ground etc
+		.setDirectionalStrength(1.8f)
+		.setLightDirection(260f, 10f)
+	),
+	LAND_OF_SNOW(Area.LAND_OF_SNOW, new Properties()
+		.setFogColor(201, 209, 209)
+		.setFogDepth(10)
+	),
+
+	SCOURGES_HOUSE(Area.SCOURGES_HOUSE, new Properties()
+		.setFogColor(21, 28, 36)
+		.setFogDepth(10)
+		.setDirectionalColor(158, 163, 168)
+		.setDirectionalStrength(2.5f)
+	),
+
+	COCKROACH_DUNGEON(Area.COCKROACH_DUNGEON, new Properties()
+		.setFogColor(27, 21, 13)
+		.setFogDepth(10)
+		.setAmbientColor(171, 160, 144)
+		.setAmbientStrength(1.0f)
+		.setDirectionalColor(171, 160, 144)
+		.setDirectionalStrength(1.8f)
+		.setLightDirection(260f, 10f)
+	),
+	COCKROACH_DUNGEON_PRISON(Area.COCKROACH_DUNGEON_PRISON, new Properties()
+		.setFogColor(27, 21, 13)
+		.setFogDepth(10)
+		.setAmbientColor(171, 160, 144)
+		.setAmbientStrength(1.0f)
+		.setDirectionalColor(171, 160, 144)
+		.setDirectionalStrength(1.8f)
+		.setLightDirection(260f, 10f)
+	),
+
 	TEARS_OF_GUTHIX(Area.TEARS_OF_GUTHIX_CAVES, new Properties()
 			.setFogColor("#060505")
 			.setFogDepth(50)

@@ -259,6 +259,9 @@ public enum Underlay {
 		.replaceWithIf(WINTER_GRUNGE, plugin -> plugin.configWinterTheme)
 	),
 
+	LAND_OF_SNOW_SNOW(GroundMaterial.SNOW_1, p -> p.ids(1083)),
+	COCKROACH_DUNGEON_SAND(GroundMaterial.SNOW_1, p -> p.ids(1150, 1153, 1122)),
+
 	NONE(GroundMaterial.DIRT, p -> {});
 
 	@Nullable
