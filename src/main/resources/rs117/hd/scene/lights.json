@@ -342,10 +342,10 @@
   },
   {
     "description": "SPIDER_REALM_LEVEL_FOUR_EGGS",
-    "height": 50,
+    "height": 150,
     "alignment": "CENTER",
-    "radius": 300,
-    "strength": 5,
+    "radius": 250,
+    "strength": 15,
     "color": [
       133,
       219,
