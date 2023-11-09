@@ -1109,6 +1109,37 @@ public enum Environment
 		.setLightDirection(260f, 10f)
 	),
 
+	SPIDER_REALM(Area.SPIDER_REALM, new Properties()
+		.setFogColor(0, 0, 0)
+		.setFogDepth(10)
+		.setAmbientColor(115, 115, 115)
+		.setAmbientStrength(1.0f)
+		.setDirectionalColor(255, 255, 255)
+		.setDirectionalStrength(1.8f)
+		.setLightDirection(260f, 10f)
+	),
+
+	SPIDER_REALM_LEVEL_FOUR(Area.SPIDER_REALM_LEVEL_FOUR, new Properties()
+		.setFogColor(0, 0, 0)
+		.setFogDepth(10)
+		.setAmbientColor(74, 74, 74)
+		.setAmbientStrength(1.0f)
+		.setDirectionalColor(100, 100, 100)
+		.setDirectionalStrength(1.8f)
+		.setLightDirection(270f, 270f)
+	),
+
+
+	GRIM_REAPERS_HOUSE(Area.GRIM_REAPERS_HOUSE, new Properties()
+		.setFogColor(10, 8, 13)
+		.setFogDepth(10)
+		.setAmbientColor(152, 145, 191)
+		.setAmbientStrength(1.0f)
+		.setDirectionalColor(255, 255, 255)
+		.setDirectionalStrength(1.8f)
+		.setLightDirection(270f, 270f)
+	),
+
 	TEARS_OF_GUTHIX(Area.TEARS_OF_GUTHIX_CAVES, new Properties()
 			.setFogColor("#060505")
 			.setFogDepth(50)

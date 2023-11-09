@@ -322,6 +322,311 @@
       64510
     ]
   },
+
+  {
+    "description": "SPIDER_REALM_LEVEL_THREE_LIGHT",
+    "height": 250,
+    "alignment": "CENTER",
+    "radius": 1000,
+    "strength": 8,
+    "color": [
+      255,
+      255,
+      255
+    ],
+    "type": "PULSE",
+    "duration": 3000,
+    "range": 5,
+    "worldX": 2080,
+    "worldY": 7195
+  },
+  {
+    "description": "SPIDER_REALM_LEVEL_FOUR_EGGS",
+    "height": 50,
+    "alignment": "CENTER",
+    "radius": 300,
+    "strength": 5,
+    "color": [
+      133,
+      219,
+      47
+    ],
+    "type": "PULSE",
+    "duration": 3000,
+    "range": 7,
+    "objectIds": [
+      63299,
+      63300,
+      63301
+    ]
+  },
+  {
+    "description": "SPIDER_REALM_LEVEL_ONE_EGGS",
+    "height": 0,
+    "alignment": "CENTER",
+    "radius": 400,
+    "strength": 25,
+    "color": [
+      133,
+      219,
+      47
+    ],
+    "type": "PULSE",
+    "duration": 2000,
+    "range": 20,
+    "objectIds": [
+      63288
+    ]
+  },
+
+  {
+    "description": "SPIDER_REALM_LEVEL_TWO_EGGS_NEST",
+    "height": 150,
+    "alignment": "CENTER",
+    "radius": 400,
+    "strength": 25,
+    "color": [
+      133,
+      219,
+      47
+    ],
+    "type": "PULSE",
+    "duration": 2000,
+    "range": 20,
+    "worldX": 2080,
+    "worldY": 7600,
+    "plane": 2
+  },
+
+  {
+    "description": "SPIDER_REALM_LEVEL_TWO_EGGS_NEST_TREE",
+    "height": 150,
+    "alignment": "CENTER",
+    "radius": 500,
+    "strength": 25,
+    "color": [
+      133,
+      219,
+      47
+    ],
+    "type": "PULSE",
+    "duration": 2000,
+    "range": 20,
+    "objectIds": [
+      63131
+    ]
+  },
+  {
+    "description": "SPIDER_REALM_LEVEL_TWO_EGGS_NEST_TREE2",
+    "height": 250,
+    "alignment": "CENTER",
+    "radius": 500,
+    "strength": 25,
+    "color": [
+      133,
+      219,
+      47
+    ],
+    "type": "PULSE",
+    "duration": 2000,
+    "range": 20,
+    "objectIds": [
+      63130,
+      63128,
+      63129
+    ]
+  },
+  {
+    "description": "GRIM_REAPER_HOUSE_CANDLETANDS",
+    "height": 200,
+    "alignment": "CENTER",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      63380,
+      63381,
+      63382,
+      63383,
+      63384,
+      63385,
+      63386,
+      63387,
+      63388,
+      63389,
+      63390,
+      63394,
+      63494,
+      63587,
+      63589,
+      63597,
+      63588,
+      63593,
+      63596,
+      63584,
+      63586,
+      63590,
+      63592,
+      63493
+    ]
+  },
+  {
+    "description": "GRIM_REAPER_HOUSE_FIREPLACE",
+    "height": 20,
+    "alignment": "CENTER",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      63404,
+      63400
+    ]
+  },
+  {
+    "description": "GRIM_REAPER_HOUSE_WALL_CANDLES",
+    "height": 250,
+    "alignment": "FRONT",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      63509
+    ]
+  },
+  {
+    "description": "GRIM_REAPER_HOUSE_CANDLE_TABLE",
+    "height": 200,
+    "alignment": "CENTER",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      63481
+    ]
+  },
+
+  {
+    "description": "GRIM_REAPER_HOUSE_STAIRCASE_DS_1",
+    "height": 200,
+    "alignment": "SOUTHWEST_CORNER",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "worldX": 2079,
+    "worldY": 6818,
+    "plane": 0
+  },
+  {
+    "description": "GRIM_REAPER_HOUSE_STAIRCASE_DS_2",
+    "height": 200,
+    "alignment": "NORTHWEST_CORNER",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "worldX": 2079,
+    "worldY": 6821,
+    "plane": 0
+  },
+  {
+    "description": "GRIM_REAPER_HOUSE_STAIRCASE_US_1",
+    "height": 200,
+    "alignment": "SOUTHEAST_CORNER",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "worldX": 2075,
+    "worldY": 6819,
+    "plane": 1
+  },
+  {
+    "description": "GRIM_REAPER_HOUSE_STAIRCASE_US_2",
+    "height": 200,
+    "alignment": "NORTHEAST_CORNER",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "worldX": 2075,
+    "worldY": 6820,
+    "plane": 1
+  },
+  {
+    "description": "GRIM_REAPER_HOUSE_PORTAL",
+    "height": 180,
+    "alignment": "CENTER",
+    "radius": 400,
+    "strength": 15,
+    "color": [
+      161,
+      102,
+      190
+    ],
+    "type": "PULSE",
+    "duration": 400,
+    "range": 20,
+    "objectIds": [
+      63305,
+      63624
+    ]
+  },
+
+
+
   {
     "description": "lava",
     "worldX": 2467,
