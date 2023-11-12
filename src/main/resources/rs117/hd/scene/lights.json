@@ -627,6 +627,167 @@
 
 
 
+
+  {
+    "description": "GAMERS_GROTTO_SC_PORTAL_FRONT",
+    "height": 280,
+    "alignment": "CENTER",
+    "radius": 700,
+    "strength": 25,
+    "color": [
+      82, 24, 139
+    ],
+    "type": "PULSE",
+    "duration": 2000,
+    "range": 20,
+    "worldX": 1176,
+    "worldY": 7599
+  },
+
+  {
+    "description": "GAMERS_GROTTO_SC_PORTAL_BACK",
+    "height": 280,
+    "alignment": "CENTER",
+    "radius": 700,
+    "strength": 25,
+    "color": [
+      82, 24, 139
+    ],
+    "type": "PULSE",
+    "duration": 2000,
+    "range": 20,
+    "worldX": 1176,
+    "worldY": 7600
+  },
+  {
+    "description": "GAMERS_GROTTO_PURPLE_PORTAL",
+    "height": 180,
+    "alignment": "WEST",
+    "radius": 600,
+    "strength": 25,
+    "color": [
+      128, 30, 255
+    ],
+    "type": "PULSE",
+    "duration": 400,
+    "range": 5,
+    "worldX": 1201,
+    "worldY": 7564,
+    "fadeInDuration": 0
+  },
+  {
+    "description": "GAMERS_GROTTO_FIST_OF_GUTHIX_PORTAL",
+    "height": 180,
+    "alignment": "WEST",
+    "radius": 600,
+    "strength": 25,
+    "color": [
+      128, 30, 255
+    ],
+    "type": "PULSE",
+    "duration": 400,
+    "range": 5,
+    "worldX": 1178,
+    "worldY": 7560,
+    "fadeInDuration": 0
+  },
+  {
+    "description": "GAMERS_GROTTO_FFA_SAFE_PORTAL",
+    "height": 180,
+    "alignment": "NORTH",
+    "radius": 600,
+    "strength": 25,
+    "color": [
+      255, 255, 255
+    ],
+    "type": "PULSE",
+    "duration": 400,
+    "range": 5,
+    "objectIds": [
+      63713
+    ],
+    "fadeInDuration": 0
+  },
+  {
+    "description": "GAMERS_GROTTO_FFA_DANGEROUS_PORTAL",
+    "height": 180,
+    "alignment": "NORTH",
+    "radius": 600,
+    "strength": 25,
+    "color": [
+      255, 59, 17
+    ],
+    "type": "PULSE",
+    "duration": 400,
+    "range": 5,
+    "objectIds": [
+      63712
+    ],
+    "fadeInDuration": 0
+  },
+  {
+    "description": "GAMERS_GROTTO_TORCHES",
+    "height": 150,
+    "alignment": "CENTER",
+    "radius": 100,
+    "strength": 25,
+    "color": [
+      252,
+      148,
+      3
+    ],
+    "type": "FLICKER",
+    "duration": 0,
+    "range": 20,
+    "objectIds": [
+      63637
+    ]
+  },
+  {
+    "description": "STEALING_CREATION_BLUE_PORTAL",
+    "height": 100,
+    "alignment": "CENTER",
+    "radius": 500,
+    "strength": 7,
+    "color": [
+      103, 188, 240
+    ],
+    "type": "FLICKER",
+    "duration": 200,
+    "range": 3,
+    "objectIds": [
+      63953,
+      63870,
+      63869,
+      63952,
+      64070,
+      63871
+    ]
+  },
+  {
+    "description": "STEALING_CREATION_RED_PORTAL",
+    "height": 100,
+    "alignment": "CENTER",
+    "radius": 500,
+    "strength": 7,
+    "color": [
+      230, 68, 53
+    ],
+    "type": "FLICKER",
+    "duration": 200,
+    "range": 3,
+    "objectIds": [
+      63948,
+      63949,
+      63950,
+      63951,
+      64068,
+      64069
+    ]
+  },
+
+
+
   {
     "description": "lava",
     "worldX": 2467,

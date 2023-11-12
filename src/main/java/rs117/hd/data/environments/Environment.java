@@ -1078,6 +1078,27 @@ public enum Environment
 		.setDirectionalStrength(1.8f)
 		.setLightDirection(260f, 10f)
 	),
+
+	GAMERS_GROTTO(Area.GAMERS_GROTTO, new Properties()
+		.setFogColor(0, 0, 0)
+		.setFogDepth(10)
+		.setAmbientColor(219, 219, 219)
+		.setAmbientStrength(1.8f)
+		.setDirectionalColor(160, 168, 166)
+		.setDirectionalStrength(1.8f)
+		.setLightDirection(260f, 10f)
+	),
+
+	STEALING_CREATION(Area.STEALING_CREATIONS, new Properties()
+		.setFogColor(160, 168, 166)
+		.setFogDepth(10)
+		.setAmbientColor(219, 219, 219)
+		.setAmbientStrength(1.8f)
+		.setDirectionalColor(160, 168, 166)
+		.setDirectionalStrength(1.8f)
+		.setLightDirection(260f, 10f)
+	),
+
 	LAND_OF_SNOW(Area.LAND_OF_SNOW, new Properties()
 		.setFogColor(201, 209, 209)
 		.setFogDepth(10)
